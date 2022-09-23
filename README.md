@@ -5,7 +5,9 @@
 __Warranty Expert__ is insurance agent company that allows shops to provide insurance and warranty services for their end customers.
 
 ## Task
-Fork this repo and finish implementing insurance certificate creation in the back-end that satisfies business and technical requirements.
+Fork this repo and finish implementing insurance certificate creation in the backend that satisfies business and technical requirements.
+
+Use Visual Studio or Visual Studio Code to launch this project. It will launch both .NET backend and Angular apps.
 
 ### Business requirements
 * Customer must be at least 18 years old when buying insurance certificate.
