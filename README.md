@@ -4,6 +4,8 @@
 
 __Warranty Expert__ is insurance agent company that allows shops to provide insurance and warranty services for their end customers.
 
+Once service is purchased - customers receive insurance certificate that holds information about the insured item, customer and how long the certificate is valid.
+
 ## Task
 Fork this repo and finish implementing insurance certificate creation in the backend that satisfies business and technical requirements.
 
