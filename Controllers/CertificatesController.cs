@@ -1,4 +1,6 @@
-﻿using InsuranceCertificates.Data;
+﻿using FluentValidation;
+using InsuranceCertificates.Data;
+using InsuranceCertificates.Interfaces;
 using InsuranceCertificates.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,10 +12,16 @@ namespace InsuranceCertificates.Controllers;
 public class CertificatesController : ControllerBase
 {
     private readonly AppDbContext _appDbContext;
+    private readonly ICertificateService _certificateService;
+    private readonly IValidator<NewCertificateModel> _validator;
 
-    public CertificatesController(AppDbContext appDbContext)
+    public CertificatesController(AppDbContext appDbContext, 
+        ICertificateService certificateService,
+        IValidator<NewCertificateModel> validator)
     {
         _appDbContext = appDbContext;
+        _certificateService = certificateService;
+        _validator = validator;
     }
 
     [HttpGet]
@@ -34,8 +42,17 @@ public class CertificatesController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Create()
+    public IActionResult Create([FromBody] NewCertificateModel certificate)
     {
+        var validationResult = _validator.Validate(certificate);
+
+        if (!validationResult.IsValid)
+        {
+            return BadRequest(validationResult.Errors.Select(e => e.ErrorMessage));
+        }
+
+        _certificateService.CreateCertificate(certificate);
+
         return Ok();
     }
 }

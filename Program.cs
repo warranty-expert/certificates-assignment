@@ -1,6 +1,12 @@
+using FluentValidation;
 using InsuranceCertificates.Data;
 using InsuranceCertificates.Domain;
+using InsuranceCertificates.Interfaces;
+using InsuranceCertificates.Options;
+using InsuranceCertificates.Services;
+using InsuranceCertificates.Validators;
 using Microsoft.EntityFrameworkCore;
+using InsuranceCertificates.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +17,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("database"));
 
+builder.Services.Configure<CertificateOptions>(builder.Configuration.GetSection("InsuranceCertificate"));
+builder.Services.AddValidatorsFromAssemblyContaining<NewCertificateModelValidator>();
+builder.Services.AddScoped<ICertificateService, CertificateService>();
+
 var app = builder.Build();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 FeedCertificates(app.Services);
 
