@@ -1,4 +1,4 @@
-﻿namespace InsuranceCertificates.Domain;
+﻿namespace InsuranceCertificates.Domain.Models;
 
 public class Customer
 {

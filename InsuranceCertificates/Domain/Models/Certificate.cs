@@ -1,7 +1,9 @@
-﻿namespace InsuranceCertificates.Models;
+﻿namespace InsuranceCertificates.Domain.Models;
 
-public class CertificateModel
+public class Certificate
 {
+    public int Id { get; set; }
+
     public string Number { get; set; }
 
     public DateTime CreationDate { get; set; }
@@ -10,9 +12,7 @@ public class CertificateModel
 
     public DateTime ValidTo { get; set; }
 
-    public string CustomerName { get; set; }
-
-    public DateTime CustomerDateOfBirth { get; set; }
+    public Customer Customer { get; set; }
 
     public string InsuredItem { get; set; }
 

@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceCertificates", "InsuranceCertificates.csproj", "{90C314D4-3AF0-416D-A22F-544FC182029F}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceCertificates", "InsuranceCertificates\InsuranceCertificates.csproj", "{90C314D4-3AF0-416D-A22F-544FC182029F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceCertificates.Test", "InsuranceCertificates.Test\InsuranceCertificates.Test.csproj", "{8676375B-CB11-4A4C-98E5-E0DFD4B8BBCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{90C314D4-3AF0-416D-A22F-544FC182029F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90C314D4-3AF0-416D-A22F-544FC182029F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90C314D4-3AF0-416D-A22F-544FC182029F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8676375B-CB11-4A4C-98E5-E0DFD4B8BBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8676375B-CB11-4A4C-98E5-E0DFD4B8BBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8676375B-CB11-4A4C-98E5-E0DFD4B8BBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8676375B-CB11-4A4C-98E5-E0DFD4B8BBCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11FB9E8D-D901-491B-89CF-CEEF86989DA2}
 	EndGlobalSection
 EndGlobal
