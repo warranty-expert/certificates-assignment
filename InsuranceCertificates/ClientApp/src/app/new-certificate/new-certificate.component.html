@@ -1,5 +1,9 @@
 <h1>New insurance certificate</h1>
 
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label class="form-label">Customer name</label>

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NewCertificateComponent implements OnInit {
 
   form: FormGroup;
+  errorMessage: string | null = null;
 
   constructor(
     private http: HttpClient,
@@ -33,7 +34,10 @@ export class NewCertificateComponent implements OnInit {
     if (valid) {
       this.http.post(this.baseUrl + 'certificates', value).subscribe(result => {
         this.router.navigateByUrl('/');
-      }, error => console.error(error));
+      }, error => {
+        console.error(error);
+        this.errorMessage = error.error;
+    });
     }
   }
 }
