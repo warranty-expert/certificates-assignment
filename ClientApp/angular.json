@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "InsuranceCertificates"
+  "defaultProject": "InsuranceCertificates",
+  "cli": {
+    "analytics": false
+  }
 }
