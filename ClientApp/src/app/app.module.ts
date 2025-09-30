@@ -11,16 +11,18 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({ declarations: [
+    ],
+    bootstrap: [AppComponent],
+    imports: [FormsModule,
         AppComponent,
         NavMenuComponent,
         HomeComponent,
         CertificatesComponent,
-        NewCertificateComponent
-    ],
-    bootstrap: [AppComponent], imports: [FormsModule,
+        NewCertificateComponent,
         ReactiveFormsModule,
         RouterModule.forRoot([
             { path: '', component: CertificatesComponent, pathMatch: 'full' },
             { path: 'new-certificate', component: NewCertificateComponent },
-        ])], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        ])],
+    providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
