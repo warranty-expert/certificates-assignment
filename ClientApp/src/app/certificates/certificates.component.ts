@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Certificate } from '../models/certificate';
-import { DatePipe, NgIf } from '@angular/common';
+import { DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-certificates',
   templateUrl: './certificates.component.html',
-  imports: [DatePipe],
+  imports: [DatePipe, RouterLink],
 })
 export class CertificatesComponent implements OnInit {
   public certificates: Certificate[] = [];
-
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') private baseUrl: string
