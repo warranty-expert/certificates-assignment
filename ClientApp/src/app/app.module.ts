@@ -1,28 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+// import { BrowserModule } from '@angular/platform-browser';
+// import { NgModule } from '@angular/core';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CertificatesComponent } from './certificates/certificates.component';
-import { NewCertificateComponent } from './new-certificate/new-certificate.component';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { AppComponent } from './app.component';
+// // Standalone components (declared with standalone: true)
+// import { NavMenuComponent } from './nav-menu/nav-menu.component';
+// import { HomeComponent } from './home/home.component';
+// import { CertificatesComponent } from './certificates/certificates.component';
+// import { NewCertificateComponent } from './new-certificate/new-certificate.component';
 
-@NgModule({ declarations: [
-    ],
-    bootstrap: [AppComponent],
-    imports: [FormsModule,
-        AppComponent,
-        NavMenuComponent,
-        HomeComponent,
-        CertificatesComponent,
-        NewCertificateComponent,
-        ReactiveFormsModule,
-        RouterModule.forRoot([
-            { path: '', component: CertificatesComponent, pathMatch: 'full' },
-            { path: 'new-certificate', component: NewCertificateComponent },
-        ])],
-    providers: [provideHttpClient(withInterceptorsFromDi())] })
-export class AppModule { }
+// @NgModule({
+//   declarations: [
+//     AppComponent, // keep only non-standalone root component here
+//   ],
+//   imports: [
+//     BrowserModule,
+//     FormsModule,
+//     ReactiveFormsModule,
+//     // Import standalone components directly
+//     NavMenuComponent,
+//     HomeComponent,
+//     CertificatesComponent,
+//     NewCertificateComponent,
+//     RouterModule.forRoot([
+//       { path: '', component: CertificatesComponent, pathMatch: 'full' },
+//       { path: 'new-certificate', component: NewCertificateComponent },
+//     ]),
+//   ],
+// })
+// export class AppModule {}
